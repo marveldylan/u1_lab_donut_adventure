@@ -25,8 +25,15 @@ class Hero {
         console.log(`${this.name}: My current health is ${this.health}!`);
     }
 
-    battle() {
-        console.log('I\'m ready to rumble');
+    battle(Enemy) {
+    let tossUp = Math.random();
+     let objArray = Object.keys(this.objects);
+     
+     if(tossUp > 0.5) {
+        console.log(objArray[0]);
+     } else {
+         console.log(objArray[1]);
+     }
     }
 }
 
@@ -60,9 +67,21 @@ class Enemy {
         console.log(`${this.name}: My current health is ${this.health}!`);
     }
 
-    battle() {
-        console.log('I\'m gonna flatten you like a slice of pepperoni!');
+    battle(enemy) {
+        let objArray = Object.keys(this.objects);
     }
+    
 }
 
 let PizzaRat = new Enemy ('Pizza Rat');
+
+// // Have Dougie talkSass
+// DougieDonut.talkSass();
+// // Have Pizza Rat talkSmack
+// PizzaRat.talkSmack();
+// // Have Dougie announceHealth
+// DougieDonut.announceHealth();
+// // Have Pizza Rat announceHealth
+// PizzaRat.announceHealth();
+
+DougieDonut.battle(PizzaRat);
